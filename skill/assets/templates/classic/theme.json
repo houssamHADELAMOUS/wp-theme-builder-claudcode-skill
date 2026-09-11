@@ -1,0 +1,80 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"layout": {
+			"contentSize": "720px",
+			"wideSize": "1200px"
+		},
+		"color": {
+			"palette": [
+				{ "slug": "base", "color": "#ffffff", "name": "Base" },
+				{ "slug": "contrast", "color": "#1a1a1a", "name": "Contrast" },
+				{ "slug": "primary", "color": "#0b57d0", "name": "Primary" },
+				{ "slug": "secondary", "color": "#f2f4f7", "name": "Secondary" },
+				{ "slug": "accent", "color": "#b3261e", "name": "Accent" },
+				{ "slug": "muted", "color": "#5f6368", "name": "Muted" }
+			],
+			"custom": false,
+			"customGradient": false,
+			"defaultPalette": false,
+			"defaultGradients": false
+		},
+		"typography": {
+			"defaultFontSizes": false,
+			"fluid": true,
+			"fontFamilies": [
+				{
+					"fontFamily": "system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+					"slug": "body",
+					"name": "Body"
+				},
+				{
+					"fontFamily": "Georgia, \"Times New Roman\", serif",
+					"slug": "heading",
+					"name": "Heading"
+				},
+				{
+					"fontFamily": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+					"slug": "mono",
+					"name": "Monospace"
+				}
+			],
+			"fontSizes": [
+				{ "slug": "small", "size": "0.875rem", "name": "Small", "fluid": false },
+				{ "slug": "medium", "size": "1rem", "name": "Medium", "fluid": false },
+				{ "slug": "large", "size": "1.25rem", "name": "Large", "fluid": { "min": "1.125rem", "max": "1.375rem" } },
+				{ "slug": "x-large", "size": "1.75rem", "name": "Extra Large", "fluid": { "min": "1.5rem", "max": "2.125rem" } },
+				{ "slug": "xx-large", "size": "2.5rem", "name": "Huge", "fluid": { "min": "2rem", "max": "3.5rem" } }
+			],
+			"customFontSize": false
+		},
+		"spacing": {
+			"defaultSpacingSizes": false,
+			"spacingSizes": [
+				{ "slug": "20", "size": "0.5rem", "name": "1" },
+				{ "slug": "30", "size": "1rem", "name": "2" },
+				{ "slug": "40", "size": "1.5rem", "name": "3" },
+				{ "slug": "50", "size": "clamp(2rem, 4vw, 3rem)", "name": "4" },
+				{ "slug": "60", "size": "clamp(3rem, 6vw, 5rem)", "name": "5" },
+				{ "slug": "70", "size": "clamp(4rem, 8vw, 7rem)", "name": "6" }
+			],
+			"units": [ "px", "rem", "em", "%", "vh", "vw" ],
+			"customSpacingSize": false
+		},
+		"shadow": {
+			"defaultPresets": false,
+			"presets": [
+				{ "slug": "card", "shadow": "0 2px 8px rgba(0, 0, 0, 0.08)", "name": "Card" }
+			]
+		},
+		"custom": {
+			"radius": {
+				"sm": "4px",
+				"md": "8px",
+				"lg": "16px"
+			}
+		}
+	}
+}

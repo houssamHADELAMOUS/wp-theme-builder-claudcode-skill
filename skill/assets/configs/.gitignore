@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build artefacts (commit assets/build/ if your host does not run Node)
+# assets/build/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.sublime-*
+
+# Logs and temp
+*.log
+*.tmp
+*.cache
+.phpcs-cache
+.eslintcache
+
+# Packaging
+*.zip
+*.tar.gz
+
+# Environment
+.wp-env.override.json
+.env

@@ -1,0 +1,22 @@
+# Exclude development files from `git archive` (release zips)
+.editorconfig       export-ignore
+.gitattributes      export-ignore
+.gitignore          export-ignore
+.phpcs.xml.dist     export-ignore
+.wp-env.json        export-ignore
+composer.json       export-ignore
+composer.lock       export-ignore
+package.json        export-ignore
+package-lock.json   export-ignore
+phpcs.xml.dist      export-ignore
+.github/            export-ignore
+assets/src/         export-ignore
+tests/              export-ignore
+README.md           export-ignore
+CHANGELOG.md        export-ignore
+
+# Line endings
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.woff2 binary

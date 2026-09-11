@@ -1,0 +1,14 @@
+/*
+ * Navigation block: loaded only on pages where the block renders
+ * (see inc/enqueue.php).
+ */
+
+.wp-block-navigation .wp-block-navigation-item__content:focus-visible {
+	outline: 2px solid var(--wp--preset--color--accent);
+	outline-offset: 2px;
+}
+
+.wp-block-navigation .current-menu-item > .wp-block-navigation-item__content {
+	text-decoration: underline;
+	text-underline-offset: 0.25em;
+}

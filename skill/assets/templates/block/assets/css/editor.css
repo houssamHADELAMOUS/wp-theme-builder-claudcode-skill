@@ -1,0 +1,12 @@
+/*
+ * Editor-only styles. Loaded via add_editor_style(). Keep in sync with
+ * style.css; theme.json handles everything token-based.
+ */
+
+.editor-styles-wrapper .screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+}

@@ -1,0 +1,27 @@
+<!-- wp:template-part {"slug":"header","area":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60)">
+	<!-- wp:query-title {"type":"archive","showPrefix":false} /-->
+
+	<!-- wp:query {"queryId":1,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"tagName":"div"} -->
+	<div class="wp-block-query">
+		<!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"default"}} -->
+			<!-- wp:pattern {"slug":"{{SLUG}}/post-card"} /-->
+		<!-- /wp:post-template -->
+
+		<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"space-between"}} -->
+			<!-- wp:query-pagination-previous /-->
+			<!-- wp:query-pagination-numbers /-->
+			<!-- wp:query-pagination-next /-->
+		<!-- /wp:query-pagination -->
+
+		<!-- wp:query-no-results -->
+			<!-- wp:pattern {"slug":"{{SLUG}}/no-results"} /-->
+		<!-- /wp:query-no-results -->
+	</div>
+	<!-- /wp:query -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","area":"footer","tagName":"footer"} /-->

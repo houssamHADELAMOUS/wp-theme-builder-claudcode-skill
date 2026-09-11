@@ -1,0 +1,31 @@
+/*
+ * Editor styles: keep the block editor looking like the front end.
+ * Loaded via add_editor_style(). Core scopes selectors to .editor-styles-wrapper.
+ */
+
+body {
+	font-family: var(--wp--preset--font-family--body, system-ui, sans-serif);
+	font-size: var(--wp--preset--font-size--medium, 1rem);
+	line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--wp--preset--font-family--heading, Georgia, serif);
+	line-height: 1.2;
+}
+
+.wp-block-quote,
+blockquote {
+	border-inline-start: 4px solid var(--wp--preset--color--primary, #0b57d0);
+	padding-inline-start: var(--wp--preset--spacing--40, 1.5rem);
+}
+
+pre,
+code {
+	font-family: var(--wp--preset--font-family--mono, monospace);
+}

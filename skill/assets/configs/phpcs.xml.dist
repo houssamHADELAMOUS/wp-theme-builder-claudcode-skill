@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<ruleset name="{{NAME}} Coding Standards">
+	<description>PHP_CodeSniffer rules for the {{NAME}} theme (WordPress Coding Standards).</description>
+
+	<!-- What to scan -->
+	<file>.</file>
+	<exclude-pattern>/vendor/*</exclude-pattern>
+	<exclude-pattern>/node_modules/*</exclude-pattern>
+	<exclude-pattern>/assets/build/*</exclude-pattern>
+	<exclude-pattern>*.min.js</exclude-pattern>
+	<exclude-pattern>*.js</exclude-pattern>
+	<exclude-pattern>*.css</exclude-pattern>
+
+	<!-- How to scan -->
+	<arg value="sp"/>
+	<arg name="basepath" value="./"/>
+	<arg name="colors"/>
+	<arg name="extensions" value="php"/>
+	<arg name="parallel" value="8"/>
+
+	<!-- Rules: WordPress Coding Standards (includes Core, Docs, Extra) -->
+	<rule ref="WordPress">
+		<!-- Allow short array syntax alongside long; pick one per project. -->
+		<exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
+	</rule>
+
+	<!-- PHP compatibility: match "Requires PHP" in style.css -->
+	<rule ref="PHPCompatibilityWP"/>
+	<config name="testVersion" value="{{PHP_MIN}}-"/>
+
+	<!-- Minimum WordPress version for deprecated-function checks: match "Requires at least" -->
+	<config name="minimum_wp_version" value="{{WP_MIN}}"/>
+
+	<!-- Text domain for i18n sniffs -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="{{TEXTDOMAIN}}"/>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- Prefix for everything in the global namespace -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="{{PREFIX}}"/>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- Allow file names like class-pfx-walker.php and template files with hyphens -->
+	<rule ref="WordPress.Files.FileName">
+		<properties>
+			<property name="is_theme" value="true"/>
+		</properties>
+	</rule>
+
+	<!-- Template files are included in global scope; allow missing file docblocks there if desired -->
+	<!--
+	<rule ref="Squiz.Commenting.FileComment.Missing">
+		<exclude-pattern>/templates/*</exclude-pattern>
+	</rule>
+	-->
+</ruleset>

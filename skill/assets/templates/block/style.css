@@ -1,0 +1,99 @@
+/*
+Theme Name:        {{NAME}}
+Theme URI:         {{THEME_URI}}
+Author:            {{AUTHOR}}
+Author URI:        {{AUTHOR_URI}}
+Description:       {{DESCRIPTION}}
+Version:           1.0.0
+Requires at least: {{WP_MIN}}
+Tested up to:      7.0
+Requires PHP:      {{PHP_MIN}}
+License:           GNU General Public License v2 or later
+License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:       {{TEXTDOMAIN}}
+Tags:              block-patterns, block-styles, full-site-editing, custom-colors, custom-logo, editor-style, wide-blocks, accessibility-ready, translation-ready
+
+{{NAME}} WordPress Theme, (C) {{YEAR}} {{AUTHOR}}
+{{NAME}} is distributed under the terms of the GNU GPL.
+*/
+
+/*
+ * Design tokens live in theme.json. This file only holds what theme.json
+ * cannot express. Keep it small.
+ */
+
+/* Accessibility helpers ------------------------------------------------ */
+
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+	background-color: var(--wp--preset--color--base);
+	clip: auto !important;
+	clip-path: none;
+	color: var(--wp--preset--color--contrast);
+	display: block;
+	font-size: 1rem;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+
+:focus-visible {
+	outline: 2px solid var(--wp--preset--color--accent);
+	outline-offset: 2px;
+}
+
+/* Reduced motion -------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* Media --------------------------------------------------------------- */
+
+img,
+video {
+	height: auto;
+	max-width: 100%;
+}
+
+/* Alignment classes core still expects ---------------------------------- */
+
+.alignleft {
+	float: left;
+	margin-inline-end: var(--wp--preset--spacing--40);
+}
+
+.alignright {
+	float: right;
+	margin-inline-start: var(--wp--preset--spacing--40);
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-inline: auto;
+}

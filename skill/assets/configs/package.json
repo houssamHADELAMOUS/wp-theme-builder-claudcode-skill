@@ -1,0 +1,47 @@
+{
+	"name": "{{SLUG}}",
+	"version": "1.0.0",
+	"description": "{{NAME}} WordPress theme.",
+	"private": true,
+	"license": "GPL-2.0-or-later",
+	"scripts": {
+		"start": "wp-scripts start --webpack-src-dir=assets/src --output-path=assets/build",
+		"build": "wp-scripts build --webpack-src-dir=assets/src --output-path=assets/build",
+		"lint:js": "wp-scripts lint-js assets/src",
+		"lint:css": "wp-scripts lint-style \"assets/src/**/*.{css,scss}\"",
+		"lint:php": "composer run lint",
+		"lint": "npm run lint:js && npm run lint:css && npm run lint:php",
+		"format": "wp-scripts format assets/src",
+		"env:start": "wp-env start",
+		"env:stop": "wp-env stop",
+		"env:cli": "wp-env run cli wp",
+		"pot": "wp-env run cli wp i18n make-pot /var/www/html/wp-content/themes/{{SLUG}} /var/www/html/wp-content/themes/{{SLUG}}/languages/{{SLUG}}.pot --domain={{TEXTDOMAIN}}",
+		"packages-update": "wp-scripts packages-update",
+		"zip": "wp-scripts plugin-zip"
+	},
+	"files": [
+		"style.css",
+		"theme.json",
+		"functions.php",
+		"readme.txt",
+		"screenshot.png",
+		"*.php",
+		"inc/**",
+		"templates/**",
+		"parts/**",
+		"patterns/**",
+		"styles/**",
+		"template-parts/**",
+		"page-templates/**",
+		"assets/build/**",
+		"assets/css/**",
+		"assets/js/**",
+		"assets/fonts/**",
+		"assets/images/**",
+		"languages/**"
+	],
+	"devDependencies": {
+		"@wordpress/env": "^10.0.0",
+		"@wordpress/scripts": "^30.0.0"
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"name": "{{VENDOR}}/{{SLUG}}",
+	"description": "{{NAME}} WordPress theme.",
+	"type": "wordpress-theme",
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"php": ">={{PHP_MIN}}"
+	},
+	"require-dev": {
+		"wp-coding-standards/wpcs": "^3.1",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		},
+		"sort-packages": true
+	},
+	"scripts": {
+		"lint": "phpcs",
+		"lint:fix": "phpcbf",
+		"lint:php": "@php -r \"foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator('.', FilesystemIterator::SKIP_DOTS)) as \\$f) { if (\\$f->getExtension() === 'php' && strpos(\\$f->getPathname(), 'vendor') === false && strpos(\\$f->getPathname(), 'node_modules') === false) { passthru('php -l ' . escapeshellarg(\\$f->getPathname())); } }\""
+	}
+}

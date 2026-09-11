@@ -1,0 +1,26 @@
+/*
+Theme Name:        {{NAME}}
+Theme URI:         {{THEME_URI}}
+Author:            {{AUTHOR}}
+Author URI:        {{AUTHOR_URI}}
+Description:       {{DESCRIPTION}}
+Version:           1.0.0
+Requires at least: {{WP_MIN}}
+Tested up to:      7.0
+Requires PHP:      {{PHP_MIN}}
+License:           GNU General Public License v2 or later
+License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:       {{TEXTDOMAIN}}
+Tags:              custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, accessibility-ready, block-styles, wide-blocks
+
+{{NAME}} WordPress Theme, (C) {{YEAR}} {{AUTHOR}}
+{{NAME}} is distributed under the terms of the GNU GPL.
+
+Normalising styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*
+ * The header above is required. The main stylesheet is assets/css/main.css,
+ * enqueued from inc/enqueue.php. Keep this file for the header only.
+ */
