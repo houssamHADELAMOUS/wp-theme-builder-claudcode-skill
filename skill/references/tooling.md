@@ -83,6 +83,13 @@ calls, hard-coded scripts, plugin territory, bad files).
 - Install in the dev site: `wp plugin install theme-check --activate` or via wp-env
   `.wp-env.json` `"plugins": [ "https://downloads.wordpress.org/plugin/theme-check.zip" ]`.
 - Appearance → Theme Check → select theme → Check it.
+- Headless (no browser): copy `${CLAUDE_SKILL_DIR}/scripts/theme-check.php` onto the
+  site and run `wp eval-file theme-check.php <theme-slug>`; in wp-env:
+  ```bash
+  docker cp "${CLAUDE_SKILL_DIR}/scripts/theme-check.php" <cli-container>:/var/www/html/theme-check.php
+  npx @wordpress/env run cli wp eval-file /var/www/html/theme-check.php my-theme
+  ```
+  Prints every message and exits 1 on REQUIRED/WARNING.
 - Fix every **REQUIRED** and **WARNING**; read **RECOMMENDED** and **INFO**.
 - Block themes: it also validates `theme.json`, required templates, and structure.
 

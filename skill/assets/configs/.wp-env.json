@@ -15,6 +15,6 @@
 		"WP_DISABLE_FATAL_ERROR_HANDLER": true
 	},
 	"lifecycleScripts": {
-		"afterStart": "wp-env run cli wp theme activate {{SLUG}}"
+		"afterStart": "npx @wordpress/env run cli wp theme activate {{SLUG}} && npx @wordpress/env run cli wp rewrite structure /%postname%/"
 	}
 }

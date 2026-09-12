@@ -88,8 +88,23 @@ node ~/.claude/skills/wordpress-theme-builder/scripts/audit-theme.js ./wp-conten
 | `--with-plugin` | `<slug>-core` plugin: CPT + taxonomy + meta examples, auto block registration, block category, editor block allow-list |
 | configs | `.phpcs.xml.dist`, `composer.json` (WPCS 3, PHPCompatibilityWP), `package.json` (wp-scripts, wp-env), `.wp-env.json`, `.editorconfig`, `.gitignore`, `.gitattributes` |
 
-Generated themes pass PHPCS (`WordPress` standard) with zero errors and warnings, pass the
-bundled audit, and their `theme.json` validates against the official schema.
+## Verification status
+
+Checked on 2026-09-12 against a fresh scaffold of each type (WordPress 7.1, PHP 8.2 in
+wp-env, WPCS 3.x):
+
+| Check | block | classic | hybrid | companion plugin |
+| --- | --- | --- | --- | --- |
+| `scripts/audit-theme.js` | 0 errors | 0 errors | 0 errors | n/a |
+| PHPCS `WordPress` + `PHPCompatibilityWP` | 0 errors, 0 warnings | 0 / 0 | 0 / 0 | 0 / 0 |
+| `php -l` | ok | ok | ok | ok |
+| `theme.json` / `styles/*.json` vs official schema | valid | valid | valid | n/a |
+| Theme Check plugin (headless) | PASS, 0 required/warning | PASS | PASS | n/a |
+| Home / single / page / archive / search / 404 rendered with `WP_DEBUG` | no notices | no notices | no notices | CPT single + archive render |
+
+The audit script was also run against the core default themes: Twenty Twenty-Five reports
+only the expected "Twenty" naming rule; older classic defaults report the same spots
+PHPCS flags.
 
 ## Repository layout
 

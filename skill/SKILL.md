@@ -163,8 +163,11 @@ Content and hand-off
 3. theme.json / style variations: validate against the `$schema`
    (`npx ajv-cli@5 validate -s <schema.json> -d theme.json --spec=draft7 --strict=false`).
 4. If Docker + Node exist: `npx @wordpress/env start` with the scaffolded `.wp-env.json`
-   (installs Theme Check + Query Monitor), activate the theme, load home/single/archive/
-   search/404 with `WP_DEBUG` on, run Appearance → Theme Check, fix REQUIRED/WARNING.
+   (installs Theme Check + Query Monitor), activate the theme
+   (`npx @wordpress/env run cli wp theme activate <slug>`), `curl` home/single/page/
+   archive/search/404 and grep for `Fatal|Warning:|Notice:`, check `wp-content/debug.log`
+   is empty, then run Theme Check headlessly with `scripts/theme-check.php`
+   (see [tooling.md](references/tooling.md)); fix REQUIRED/WARNING.
 5. Walk [theme-review-checklist.md](references/theme-review-checklist.md) for the
    sections that apply and [pre-launch.md](assets/checklists/pre-launch.md) before
    release. Copy the relevant checklist into the response and tick what you verified;
@@ -233,6 +236,7 @@ License URI, Text Domain (= slug). Child themes add `Template: parent-slug`.
 - `scripts/scaffold-theme.js`: generate a block/classic/hybrid theme (+ companion plugin, configs). Run it; do not read it.
 - `scripts/audit-theme.js <dir> [--prefix p] [--json] [--quiet]`: heuristic security/standards/review audit. Exit 1 on errors.
 - `scripts/check-tools.js`: detect php/composer/node/npm/docker/wp-cli and say which real checks can run.
+- `scripts/theme-check.php`: run the Theme Check plugin headlessly via `wp eval-file`; exit 1 on REQUIRED/WARNING.
 
 ## Response style
 
